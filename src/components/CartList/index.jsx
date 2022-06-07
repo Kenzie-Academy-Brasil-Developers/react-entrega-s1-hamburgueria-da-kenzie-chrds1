@@ -1,5 +1,7 @@
 import Cart from "../Cart"
 import { useEffect } from "react"
+import { isCompositeComponentWithType } from "react-dom/test-utils"
+import { CardListStyle } from "./style"
 
 function CartList({currentSale, setCurrentSale, cartTotal, setCartTotal}){
     
@@ -12,14 +14,15 @@ function CartList({currentSale, setCurrentSale, cartTotal, setCartTotal}){
         setCurrentSale([])
     }
 
-    if(currentSale.length >0){
+    
     return(
-        <div>
-            <span>Carrinho de compras</span>
-            <div>
-            {[...new Set(currentSale)]?.map((item)=><Cart key={item.id} id={item.id} name={item.name} category={item.category} price={item.price} img={item.img} currentSale={currentSale} setCurrentSale={setCurrentSale} cartTotal={cartTotal} setCartTotal={setCartTotal}/>)}
+        <CardListStyle>
+        <div className="container-carrinho">
+            <span className="header-carrinho">Carrinho de compras</span>
+            <div className="container-cards-carrinho">
+            {currentSale?.map((item)=><Cart key={item.id} id={item.id} name={item.name} category={item.category} price={item.price} img={item.img} quant={item.quant} currentSale={currentSale} setCurrentSale={setCurrentSale} cartTotal={cartTotal} setCartTotal={setCartTotal}/>)}
             </div>
-            <div>
+            <div className="container-total-carrinho">
                 <div>
                     <span>Total</span>
                     <span>{cartTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
@@ -27,8 +30,9 @@ function CartList({currentSale, setCurrentSale, cartTotal, setCartTotal}){
                 <button onClick={removeAll}>Remover todos</button>
             </div>
         </div>
+        </CardListStyle>
     )
-    }
+    
 }
 
 export default CartList

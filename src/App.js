@@ -11,6 +11,10 @@ function App() {
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
   const [search, setSearch] = useState("")
+  const [status, setStatus] = useState({
+    type: "",
+    mensagem: ""
+  })
 
   useEffect(()=>{
     fetch("https://hamburgueria-kenzie-json-serve.herokuapp.com/products")
@@ -56,6 +60,8 @@ function App() {
               products={filteredProducts.length > 0 && products? filteredProducts: products} 
               currentSale={currentSale}
               setCurrentSale={setCurrentSale}
+              status ={status}
+              setStatus ={setStatus}
             />
           </section>
           <section>

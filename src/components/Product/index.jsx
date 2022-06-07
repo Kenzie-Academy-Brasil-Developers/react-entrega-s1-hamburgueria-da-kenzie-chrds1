@@ -1,15 +1,18 @@
 import { ProductStyle } from "./styled"
-import React, {useEffect, useState} from "react"
+import React from "react"
 
-function Product({id, name, category, price, img, currentSale, setCurrentSale}){
+function Product({id, name, category, price, img, currentSale, setCurrentSale, status, setStatus}){
     
-
-    function addCart(){
-        currentSale.length > 0
-        ?
-        setCurrentSale([...currentSale, {id, name, img, category, price}])
-        :
-        setCurrentSale([{id, name, img, category, price}])
+    function addCart(event){
+        if(currentSale.length === 0){
+            setStatus({type: "",  mensagem: ""})
+            setCurrentSale([{id, name, img, category, price}])
+        } else if(currentSale.length > 0 && currentSale.find((el)=> el.name === event.target.id) === undefined){
+            setStatus({type: "",  mensagem: ""})
+            setCurrentSale([...currentSale, {id, name, img, category, price}]) 
+        } else if(currentSale.length > 0 && currentSale.some((el)=> el.name === event.target.id)){
+            setStatus({type: "error", mensagem: "Produto limitado a 1(uma) unidade por CPF"})
+        }   
     }
 
     return(
@@ -22,7 +25,7 @@ function Product({id, name, category, price, img, currentSale, setCurrentSale}){
                 <h3>{name}</h3>
                 <span>{category}</span>
                 <span className="price">{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
-                <button onClick={addCart}>Adicionar</button>
+                <button onClick={addCart} id={name}>Adicionar</button>
             </div>
         </div>
         </ProductStyle>
