@@ -59,6 +59,10 @@ export const SectionStyle = styled.section`
         gap: .75rem;
     }
     header{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         width: 100vw;
         max-width: 100%;
         background-color: #F5F5F5;
@@ -136,11 +140,13 @@ export const SectionStyle = styled.section`
     @media (min-width: 768px){
         header{
             display: inline-flex;
+            flex-direction: row;
             justify-content: space-between;
             padding: 1rem 3rem 1rem 3rem;
         }
         .container-Pesquisa{
-            max-width: 30%;
+            max-width: 40%;
+            min-width: 170px;
         }
         .container-main{
             display: flex;
@@ -154,7 +160,8 @@ export const SectionStyle = styled.section`
         }
         .container-cart{
             width: 100vw;
-            max-width: 30%;
+            min-width: 30%;
+            margin: 0 auto;
         }
 
 

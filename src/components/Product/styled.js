@@ -51,8 +51,8 @@ export const ProductStyle= styled.div`
     
     @media (min-width: 768px){
         .card{
-            width: 50%;
-            min-width: 25vw;
+            width: 0;
+            min-width: 20vw;
             max-width: 25vw;
             height: 300px;
             border: 2px solid #E0E0E0;

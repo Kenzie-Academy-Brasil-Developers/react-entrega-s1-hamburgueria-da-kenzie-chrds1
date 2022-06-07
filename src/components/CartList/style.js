@@ -52,4 +52,5 @@ export const CardListStyle = styled.div`
         margin: 0.5rem;
     }
 
+
 `

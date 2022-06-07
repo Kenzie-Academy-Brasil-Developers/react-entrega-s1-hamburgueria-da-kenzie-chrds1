@@ -24,13 +24,14 @@ export const ProductsListStyle= styled.div`
         .container-products{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: baseline;
             width: 100vw;
             max-width: 100%;
             margin: auto;
             gap: 10px;
-            overflow-x: hidden
+            overflow-x: hidden;
+            overflow-y: hidden;
         }
 
     }
