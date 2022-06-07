@@ -53,30 +53,53 @@ export const SectionStyle = styled.section`
     .container{
         width: 100vw;
         max-width: 100%;
-        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 1rem auto;
+        gap: .75rem;
     }
     header{
         width: 100vw;
         max-width: 100%;
         background-color: #F5F5F5;
         padding: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: .5rem;
+    }
+    .logo{
+        display: inline-flex;
+        justify-content: center;
+        align-items: baseline;
+        margin-bottom: .5rem;
+        gap: .4rem
+    }
+    .logo h1{
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #333333;
+    }
+    .logo span{
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #EB5757;
     }
     .container-Pesquisa{
         background-color: #ffffff;
         height: 3.5rem;
         width: 90%;
-        margin: auto;
         padding: 0.5rem;
         box-sizing: border-box;
         display: inline-flex;   
         justify-content: space-between;
         align-items: center;
+        border: 2px solid #E0E0E0 ;
+        border-radius: 0.5rem;
 
     }
     .container-Pesquisa input{
         height: 2.5rem;
         border: none;
+        width: 100vw;
+        max-width: 60%;
         
     }
     button{
@@ -90,6 +113,52 @@ export const SectionStyle = styled.section`
         font-family: 'Inter';
         font-weight: 600;
         font-size: 14px;
+        cursor: pointer;
     }
-    
+    .container-main{
+        max-width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .container-produtos{
+        width: 100vw;
+        max-width: 100%;
+        margin: auto;
+    }
+    .container-cart{
+        margin: auto;
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    @media (min-width: 768px){
+        header{
+            display: inline-flex;
+            justify-content: space-between;
+            padding: 1rem 3rem 1rem 3rem;
+        }
+        .container-Pesquisa{
+            max-width: 30%;
+        }
+        .container-main{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: flex-start;
+        }
+        .container-produtos{
+            width: 100vw;
+            max-width: 70%;
+        }
+        .container-cart{
+            width: 100vw;
+            max-width: 30%;
+        }
+
+
+
+    }
+
 `

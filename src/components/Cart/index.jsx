@@ -1,6 +1,7 @@
 import React from "react"
+import { CartStyle } from "./style"
 
-function Cart({id, name, category, price, img, quant, currentSale, setCurrentSale, cartTotal, setCartTotal}){
+function Cart({id, name, category, price, img, currentSale, setCurrentSale, cartTotal, setCartTotal}){
     
     function removeCart(event){
         const filter = currentSale?.filter((item)=> item.id !== +event.target.id)
@@ -8,18 +9,21 @@ function Cart({id, name, category, price, img, quant, currentSale, setCurrentSal
     }
     
     return(
-        <div>
-            <div>
+        <CartStyle>
+        <div className="container-cart">
+            <div className="container-img-cart">
                 <img src={img} alt={name}/>
             </div>
-            <div>
-                <span>{name}</span>
+            <div className="container-name">
+                <h3>{name.length > 10? name.slice(0, 10)+"...": name}</h3>
                 <span>{category}</span>
             </div>
-            <span>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
-            <span>x{quant}</span>
-            <span onClick={removeCart} id={id}>Remover</span>
+            <div className="container-price">
+                <span onClick={removeCart} id={id}>Remover</span>
+                <p>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+            </div>
         </div>
+        </CartStyle>
     )
 }
 

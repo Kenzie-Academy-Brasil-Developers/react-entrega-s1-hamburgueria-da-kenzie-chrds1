@@ -39,14 +39,13 @@ function App() {
   }
 
   return (
-    
     <div className="App">
       <GlobalStyle/>
       <SectionStyle>
       <section className='container'>
         <header className='header-App'>
           <div className='logo'>
-            <h2>Burguer</h2>
+            <h1>Burguer</h1>
             <span>Kenzie</span>
           </div>
           <div className='container-Pesquisa'>
@@ -54,8 +53,8 @@ function App() {
             <button onClick={showProducts}>Pesquisar</button>
           </div>
         </header>
-        <main>
-          <section>
+        <main className='container-main'>
+          <section className='container-produtos'>
             <ProductsList 
               products={filteredProducts.length > 0 && products? filteredProducts: products} 
               currentSale={currentSale}
@@ -64,7 +63,7 @@ function App() {
               setStatus ={setStatus}
             />
           </section>
-          <section>
+          <section className='container-cart'>
             <CartList 
               currentSale={currentSale} 
               setCurrentSale={setCurrentSale} 

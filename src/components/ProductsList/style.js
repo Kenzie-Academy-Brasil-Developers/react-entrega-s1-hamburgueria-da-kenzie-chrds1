@@ -8,9 +8,31 @@ export const ProductsListStyle= styled.div`
         align-items: baseline;
         overflow-x: scroll;
         width: 100vw;
-        max-width: 90%;
+        max-width: 100%;
         margin: auto;
         gap: 10px
+    }
+    .span-produtos{
+        color: red;
+        display: inline-flex;
+        gap:.2rem;
+        font-size: .875rem;
+        margin-bottom: .5rem;
+    }
+
+    @media (min-width: 768px){
+        .container-products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            width: 100vw;
+            max-width: 100%;
+            margin: auto;
+            gap: 10px;
+            overflow-x: hidden
+        }
+
     }
 
 `

@@ -49,6 +49,17 @@ export const ProductStyle= styled.div`
         color: #27AE60;
     }
     
+    @media (min-width: 768px){
+        .card{
+            width: 50%;
+            min-width: 25vw;
+            max-width: 25vw;
+            height: 300px;
+            border: 2px solid #E0E0E0;
+            border-radius: 0.5rem;
+            gap: 1rem;
+    }
+    }
 
 
 `

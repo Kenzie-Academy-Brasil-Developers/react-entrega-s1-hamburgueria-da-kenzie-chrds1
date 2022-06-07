@@ -25,7 +25,7 @@ function CartList({currentSale, setCurrentSale, cartTotal, setCartTotal}){
             <div className="container-total-carrinho">
                 <div>
                     <span>Total</span>
-                    <span>{cartTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
+                    <p>{cartTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
                 </div>
                 <button onClick={removeAll}>Remover todos</button>
             </div>

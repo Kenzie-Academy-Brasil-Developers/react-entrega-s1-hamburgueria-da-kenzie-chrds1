@@ -11,7 +11,7 @@ function Product({id, name, category, price, img, currentSale, setCurrentSale, s
             setStatus({type: "",  mensagem: ""})
             setCurrentSale([...currentSale, {id, name, img, category, price}]) 
         } else if(currentSale.length > 0 && currentSale.some((el)=> el.name === event.target.id)){
-            setStatus({type: "error", mensagem: "Produto limitado a 1(uma) unidade por CPF"})
+            setStatus({type: "Erro", mensagem: "Produto limitado a uma(01) unidade por CPF"})
         }   
     }
 
