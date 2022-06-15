@@ -7,7 +7,18 @@ function ProductsList({products, currentSale, setCurrentSale, status, setStatus}
         <ProductsListStyle>
             {status.mensagem !== ""? <div className="span-produtos"><span>{status.type}:</span>{status.mensagem}</div>: ""}
             <div className="container-products">
-                {products?.map((item)=><Product key={item.id} id={item.id} name={item.name} category={item.category} price={item.price} img={item.img} currentSale={currentSale} setCurrentSale={setCurrentSale} status ={status}  setStatus ={setStatus}/>)}
+                {products?.map((item)=><Product 
+                    key={item.id} 
+                    id={item.id} 
+                    name={item.name} 
+                    category={item.category} 
+                    price={item.price} 
+                    img={item.img} 
+                    currentSale={currentSale} 
+                    setCurrentSale={setCurrentSale} 
+                    status ={status}  
+                    setStatus ={setStatus}
+                />)}
             </div>
         </ProductsListStyle>
     )

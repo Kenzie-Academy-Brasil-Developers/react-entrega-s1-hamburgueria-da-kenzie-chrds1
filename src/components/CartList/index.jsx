@@ -1,13 +1,12 @@
 import Cart from "../Cart"
 import { useEffect } from "react"
-import { isCompositeComponentWithType } from "react-dom/test-utils"
 import { CardListStyle } from "./style"
 
 function CartList({currentSale, setCurrentSale, cartTotal, setCartTotal}){
     
     useEffect(()=>{
         setCartTotal(currentSale.map(item=>item.price).reduce((p, c)=> parseFloat(p)+ parseFloat(c), 0))
-      }, [currentSale])
+      }, [currentSale, setCartTotal])
     
     function removeAll(event){
         event.preventDefault()
@@ -20,7 +19,19 @@ function CartList({currentSale, setCurrentSale, cartTotal, setCartTotal}){
         <div className="container-carrinho">
             <span className="header-carrinho">Carrinho de compras</span>
             <div className="container-cards-carrinho">
-            {currentSale?.map((item)=><Cart key={item.id} id={item.id} name={item.name} category={item.category} price={item.price} img={item.img} quant={item.quant} currentSale={currentSale} setCurrentSale={setCurrentSale} cartTotal={cartTotal} setCartTotal={setCartTotal}/>)}
+            {currentSale?.map((item)=><Cart 
+                key={item.id} 
+                id={item.id} 
+                name={item.name} 
+                category={item.category} 
+                price={item.price} 
+                img={item.img} 
+                quant={item.quant} 
+                currentSale={currentSale} 
+                setCurrentSale={setCurrentSale} 
+                cartTotal={cartTotal} 
+                setCartTotal={setCartTotal}
+            />)}
             </div>
             <div className="container-total-carrinho">
                 <div>

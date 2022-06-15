@@ -29,12 +29,15 @@ function App() {
     setSearch(event.currentTarget.value)
 
     return search?.split("").length < 1
-      ? setFilteredProducts(products)
+      ? 
+      setFilteredProducts(products)
       : products.some(
           (product) => product.name.toLowerCase().includes(search.toLowerCase()) !== false)
-      ? setFilteredProducts(
+      ? 
+      setFilteredProducts(
           products.filter((product) =>product.name.toLowerCase().includes(search.toLowerCase())))
-      : setFilteredProducts(
+      : 
+      setFilteredProducts(
           products.filter((product) =>product.category.toLowerCase().includes(search.toLowerCase())));
   }
 
